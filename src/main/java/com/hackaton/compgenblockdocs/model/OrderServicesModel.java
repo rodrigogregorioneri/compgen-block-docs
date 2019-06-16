@@ -3,6 +3,8 @@ package com.hackaton.compgenblockdocs.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
+
 @Document(collection = "orderservice")
 public class OrderServicesModel {
 
@@ -16,6 +18,16 @@ public class OrderServicesModel {
     private String timestamp;
 
     private String status;
+
+    private ArrayList<DocumentUserModel> documents;
+
+    public ArrayList<DocumentUserModel> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(ArrayList<DocumentUserModel> documents) {
+        this.documents = documents;
+    }
 
     public String getId() {
         return id;
