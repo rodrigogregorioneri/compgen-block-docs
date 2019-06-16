@@ -2,7 +2,6 @@ package com.hackaton.compgenblockdocs.model;
 
 import java.security.MessageDigest;
 
-import com.google.gson.GsonBuilder;
 
 public class StringUtil {
 
@@ -28,10 +27,7 @@ public class StringUtil {
         }
     }
 
-    //Short hand helper to turn Object into a json string
-    public static String getJson(Object o) {
-        return new GsonBuilder().setPrettyPrinting().create().toJson(o);
-    }
+
 
     //Returns difficulty string target, to compare to hash. eg difficulty of 5 will return "00000"
     public static String getDificultyString(int difficulty) {

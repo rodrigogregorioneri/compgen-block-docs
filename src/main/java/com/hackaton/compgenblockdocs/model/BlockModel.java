@@ -1,8 +1,15 @@
 package com.hackaton.compgenblockdocs.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.Date;
 
+@Document(collection = "block")
 public class BlockModel {
+
+    @Id
+    private String id;
 
     public String hash;
     public String previousHash;
@@ -20,7 +27,7 @@ public class BlockModel {
     }
 
     //Calculate new hash based on blocks contents
-    protected String calculateHash() {
+    public String calculateHash() {
         String calculatedhash = StringUtil.applySha256(
                 previousHash +
                         Long.toString(timeStamp) +
@@ -38,5 +45,55 @@ public class BlockModel {
             hash = calculateHash();
         }
     }
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    public String getLastBlock() {
+        return previousHash;
+    }
+
+    public void setLastBlock(String lastBlock) {
+        this.previousHash = lastBlock;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public long getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(long timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+    public int getNonce() {
+        return nonce;
+    }
+
+    public void setNonce(int nonce) {
+        this.nonce = nonce;
+    }
+
 
 }

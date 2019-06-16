@@ -1,6 +1,6 @@
 package com.hackaton.compgenblockdocs;
 
-import com.hackaton.compgenblockdocs.model.BlockchainModel;
+import com.hackaton.compgenblockdocs.service.BlockchainModel;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CompgenBlockDocsApplication {
 
 	public static void main(String[] args) {
-//		SpringApplication.run(CompgenBlockDocsApplication.class, args);
+		SpringApplication.run(CompgenBlockDocsApplication.class, args);
 
-		BlockchainModel bc = new BlockchainModel();
-		bc.start();
+//		BlockchainModel bc = new BlockchainModel();
+//		bc.start();
 	}
 
 }
