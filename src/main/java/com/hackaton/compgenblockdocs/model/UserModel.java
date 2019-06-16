@@ -4,6 +4,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.List;
+
 @Document(collection = "user")
 public class UserModel {
 
@@ -17,6 +19,8 @@ public class UserModel {
     private String cpf;
 
     private String perm;
+
+    private List<Documents> documents;
 
     public String getId() {
         return id;
@@ -56,5 +60,13 @@ public class UserModel {
 
     public void setPerm(String perm) {
         this.perm = perm;
+    }
+
+    public List<Documents> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(List<Documents> documents) {
+        this.documents = documents;
     }
 }

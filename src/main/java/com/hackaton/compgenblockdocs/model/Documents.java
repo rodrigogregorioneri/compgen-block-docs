@@ -1,21 +1,18 @@
 package com.hackaton.compgenblockdocs.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+public class Documents {
 
-@Document(collection = "documentuser")
-public class DocumentUserModel {
-
-    @Id
     private String id;
 
     private String base64Document;
 
     private String punlic;
 
+    private String privat;
+
     private String type;
 
-    private String privat;
+    private String statusDocument;
 
     public String getId() {
         return id;
@@ -47,5 +44,21 @@ public class DocumentUserModel {
 
     public void setPrivat(String privat) {
         this.privat = privat;
+    }
+
+    public String getStatusDocument() {
+        return statusDocument;
+    }
+
+    public void setStatusDocument(String statusDocument) {
+        this.statusDocument = statusDocument;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
