@@ -20,7 +20,7 @@ public class BlockModel {
     }
 
     //Calculate new hash based on blocks contents
-    public String calculateHash() {
+    protected String calculateHash() {
         String calculatedhash = StringUtil.applySha256(
                 previousHash +
                         Long.toString(timeStamp) +
@@ -37,7 +37,6 @@ public class BlockModel {
             nonce ++;
             hash = calculateHash();
         }
-        System.out.println("Block Mined!!! : " + hash);
     }
 
 }
