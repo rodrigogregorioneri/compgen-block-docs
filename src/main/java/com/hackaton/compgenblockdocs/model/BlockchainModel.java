@@ -6,19 +6,13 @@ import java.util.ArrayList;
 public class BlockchainModel {
 
     public static ArrayList<BlockModel> blockchain = new ArrayList<BlockModel>();
-    public static int difficulty = 5;
+    public static int difficulty = 4;
 
     public void start() {
         //add our blocks to the blockchain ArrayList:
 
         System.out.println("Trying to Mine block 1... ");
         addBlock(new BlockModel("Hi im the first block", "0"));
-
-        System.out.println("Trying to Mine block 2... ");
-        addBlock(new BlockModel("Yo im the second block",blockchain.get(blockchain.size()-1).hash));
-
-        System.out.println("Trying to Mine block 3... ");
-        addBlock(new BlockModel("Hey im the third block",blockchain.get(blockchain.size()-1).hash));
 
         System.out.println("\nBlockchain is Valid: " + isChainValid());
 
